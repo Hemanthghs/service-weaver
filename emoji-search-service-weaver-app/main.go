@@ -27,13 +27,6 @@ type app struct {
 
 func run(ctx context.Context, a *app) error {
 	a.Logger(ctx).Info("emojis listener available.", "addr", a.lis)
-	// http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-	// 	if r.URL.Path != "/" {
-	// 		http.NotFound(w, r)
-	// 		return
-	// 	}
-	// 	fmt.Fprint(w, indexHtml)
-	// })
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path != "/" {
 			http.NotFound(w, r)
